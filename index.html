@@ -170,20 +170,19 @@
         }
 
         #btnGlobalRandom {
-    position: fixed; 
-    top: 80px; /* Distância do topo, ficando logo abaixo do nav-header */
-    left: 50%; /* Joga o botão para o meio da tela */
-    transform: translateX(-50%); /* Centraliza perfeitamente em relação ao próprio tamanho */
-    width: auto;
-    padding: 0 15px;
-    height: 32px;
-    font-size: 9px;
-    z-index: 3000; /* Z-index alto garante que ele fique por cima das cartas e tabuleiros */
-    border: 1px solid #FFFFFF;
-    background: #000000;
-    box-shadow: none;
-}
-
+            position: fixed; 
+            top: 80px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: auto;
+            padding: 0 15px;
+            height: 32px;
+            font-size: 9px;
+            z-index: 3000; 
+            border: 1px solid #FFFFFF;
+            background: #000000;
+            box-shadow: none;
+        }
 
         .post-game-controls {
             position: fixed;
@@ -887,7 +886,7 @@
                 <div id="detailCardVerbs" class="verb-list" style="margin-bottom: 15px; font-weight: 600; color: var(--gold-main);"></div>
                 
                 <div id="detailExtendedText" style="text-align: left; font-size: 13px; line-height: 1.6; border-top: 1px solid #333333; padding-top: 15px; display: flex; flex-direction: column; gap: 10px; font-family: 'Montserrat', sans-serif;">
-                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -908,7 +907,8 @@
         const btnVoltar = document.getElementById('btnVoltar');
         const postGameControls = document.getElementById('postGameControls'); 
 
-        const baseUrl = 'https://www.sacred-texts.com/tarot/pkt/img/';
+        // --- NOVA FONTE DE IMAGENS ---
+        const baseUrl = 'https://marycusack.com/Decks/Images/Tarot/R/Radiant/';
         
         const majorNames = [
             "0 - O Louco", "1 - O Mago", "2 - A Sacerdotisa", "3 - A Imperatriz", 
@@ -917,6 +917,16 @@
             "12 - O Enforcado", "13 - A Morte", "14 - A Temperança", "15 - O Diabo", 
             "16 - A Torre", "17 - A Estrela", "18 - A Lua", "19 - O Sol", 
             "20 - O Julgamento", "21 - O Mundo"
+        ];
+
+        // Mapeamento exato dos nomes dos arquivos dos arcanos maiores do site
+        const majorFileNames = [
+            "00%20Fool", "01%20Magician", "02%20Priestess", "03%20Empress", 
+            "04%20Emperor", "05%20Hierophant", "06%20Lovers", "07%20Chariot", 
+            "08%20Strength", "09%20Hermit", "10%20Wheel", "11%20Justice", 
+            "12%20Hanged", "13%20Death", "14%20Temperance", "15%20Devil", 
+            "16%20Tower", "17%20Star", "18%20Moon", "19%20Sun", 
+            "20%20Judgement", "21%20World"
         ];
 
         const verbsMap = {
@@ -948,7 +958,7 @@
             "6 de Ouros": ["carência", "falta", "Partilhar", "doar", "receber", "equilibrar", "retribuir"], 
             "7 de Ouros": ["Aguardar", "avaliar", "cultivar", "maturar", "colher"], "8 de Ouros": ["Trabalhar", "lapidar", "persistir", "praticar", "detalhar"],
             "9 de Ouros": ["Desfrutar", "lucrar", "estabilizar", "valorizar", "isolar"], "10 de Ouros": ["Consolidar", "herdar", "perpetuar", "partilhar", "enriquecer"],
-            "Pajem de Ouros": ["Focar", "absorver", "bitolar", "acumular", "estreitar"], "Cavaleiro de Ouros": ["Trabalhar", "rotinizar", "robotizar", "persistir", "bitolar"],
+            "Pajem de Ouros": ["Focalizar", "absorver", "bitolar", "acumular", "estreitar"], "Cavaleiro de Ouros": ["Trabalhar", "rotinizar", "robotizar", "persistir", "bitolar"],
             "Rainha de Ouros": ["Zelar", "superproteger", "chocar", "prender", "nutrir"], "Rei de Ouros": ["Controlar", "tiranizar", "usufruir", "estagnar", "reter"],
             "Ás de Paus": ["Pulsar", "queimar", "brotar", "canalizar", "iniciar"], 
             "2 de Paus": ["Planejar", "ambicionar", "visar", "hesitar", "projetar", "adiamento por dúvida"], 
@@ -985,24 +995,34 @@
 
         function generateMinors(prefix, suitLabel) {
             let cards = [];
-            cards.push({ name: `Ás de ${suitLabel}`, url: `${baseUrl}${prefix}ac.jpg` });
-            for (let i = 2; i <= 10; i++) {
-                cards.push({ name: `${i} de ${suitLabel}`, url: `${baseUrl}${prefix}${String(i).padStart(2, '0')}.jpg` });
+            for (let i = 1; i <= 10; i++) {
+                let numStr = String(i).padStart(2, '0');
+                let cardName = i === 1 ? `Ás de ${suitLabel}` : `${i} de ${suitLabel}`;
+                cards.push({ name: cardName, url: `${baseUrl}${prefix}${numStr}.jpg` });
             }
-            const court = [{s:'pa', n:'Pajem'}, {s:'kn', n:'Cavaleiro'}, {s:'qu', n:'Rainha'}, {s:'ki', n:'Rei'}];
-            court.forEach(c => { cards.push({ name: `${c.n} de ${suitLabel}`, url: `${baseUrl}${prefix}${c.s}.jpg` }); });
+            
+            const courtNames = ['Pajem', 'Cavaleiro', 'Rainha', 'Rei'];
+            const courtSuffixes = ['C1P', 'C2K', 'C3Q', 'C4K'];
+            
+            courtNames.forEach((courtName, index) => {
+                let suffix = courtSuffixes[index];
+                if (prefix === 'S' && index === 1) {
+                    suffix = 'C2K';
+                }
+                cards.push({ name: `${courtName} de ${suitLabel}`, url: `${baseUrl}${prefix}${suffix}.jpg` });
+            });
             return cards;
         }
 
         const deck = {
-            major: majorNames.map((name, i) => ({ name, url: `${baseUrl}ar${String(i).padStart(2, '0')}.jpg` })),
-            pentacles: generateMinors('pe', 'Ouros'), swords: generateMinors('sw', 'Espadas'),
-            cups: generateMinors('cu', 'Copas'), wands: generateMinors('wa', 'Paus')
+            major: majorNames.map((name, i) => ({ name, url: `${baseUrl}${majorFileNames[i]}.jpg` })),
+            pentacles: generateMinors('P', 'Ouros'), 
+            swords: generateMinors('S', 'Espadas'),
+            cups: generateMinors('C', 'Copas'), 
+            wands: generateMinors('W', 'Paus')
         };
 
         function ensureSlotMapping() {
-            // O mapeamento agora está fixo e cravado direto no HTML! 
-            // Isso previne que o jogo trave quando o script tenta calcular posições antes da tela carregar 100%.
             return;
         }
 
@@ -1423,7 +1443,7 @@
             phaseTargets = getGameTargets(gameMode).minors;
 
             gameGrid.innerHTML = '';
-            let shuffledMinors = shuffle([...deck.pentacles, ...deck.swords, ...deck.cups, ...deck.wands]);
+            let shuffledMinors = shuffle([...deck.wands, ...deck.cups, ...deck.swords, ...deck.pentacles]);
             
             shuffledMinors.forEach((cardData) => {
                 const backCard = document.createElement('div');
@@ -1478,7 +1498,7 @@
             const btn = document.getElementById('btnToggleMeanings');
             if (meaningsVisible) {
                 document.body.classList.remove('hide-meanings');
-                btn.textContent = 'Desligar Significados';
+                btn.textContent = 'Ocultar Significados';
             } else {
                 document.body.classList.add('hide-meanings');
                 btn.textContent = 'Ligar Significados';
