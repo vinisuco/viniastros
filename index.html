@@ -312,15 +312,19 @@
         }
 
         /* --- TABULEIRO PRINCIPAL --- */
-        .board {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
+       .board {
+    position: fixed; /* Usamos fixed para ter controle absoluto do espaço */
+    top: 65px; /* Altura do cabeçalho, criando o teto da linha vermelha */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 65px); /* A altura agora é a tela menos o cabeçalho */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
 
         .board.game-active {
-    transform: translateY(-20vh) scale(0.75);
+    /* Desloca o centro fugindo do painel inferior e do botão de Aleatório */
+    transform: translateY(calc(-15vh - 25px)) scale(0.68); 
 }
 
         .pair-container {
