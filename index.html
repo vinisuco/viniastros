@@ -1169,7 +1169,7 @@
 
             let targets = getGameTargets(gameMode);
             let randomMajors = shuffle([...deck.major]);
-            let randomMinors = shuffle([...deck.wands, ...deck.cups, ...deck.swords, ...deck.pentacles]);
+            let randomMinors = shuffle([...deck.pentacles, ...deck.swords, ...deck.cups, ...deck.wands]);
 
             targets.majors.forEach(slot => {
                 if(slot) pickCardForSlot(slot, randomMajors.pop(), false);
