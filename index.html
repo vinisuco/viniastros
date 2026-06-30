@@ -51,7 +51,7 @@
         #mainBoard[data-current-deck="HoiPoloi"] .back-card,
         #mainBoard[data-current-deck="HoiPoloi"] .gallery-card {
             filter: saturate(0.8) contrast(0.9) sepia(0.2) hue-rotate(-10deg) !important;
-            border: 0px solid #FFFFFF !important;
+            border: 1px solid #FFFFFF !important;
             border-radius: 12px !important;
         }
 
@@ -68,17 +68,10 @@
         }
 
         #mainBoard[data-current-deck="RiderWaite"] .card {
-            border-width: 2px 0px 2px 0px !important;
+            border-width: 2px 1px 2px 1px !important;
             border-style: solid !important;
             border-color: #FFFFFF !important;
             border-radius: 5px !important;
-        }
-
-#mainBoard[data-current-deck="HoiPoloi"] .card {
-            border-width: 9px 1px 9px 1px !important;
-            border-style: solid !important;
-            border-color: #FFFFFF !important;
-            border-radius: 15px !important;
         }
 
         /* --- CABEÇALHO --- */
@@ -414,6 +407,7 @@
             </div>
         </div>
 
+        <!-- MANDALA -->
         <div class="central-pair">
             <div class="card" data-slot-num="0-left" data-pos="inside" onclick="selectCard(this)">0</div>
             <div class="card" data-slot-num="0-right" data-pos="outside" onclick="selectCard(this)">0</div>
@@ -467,6 +461,7 @@
             <div class="card" data-slot-num="6" data-pos="inside" onclick="selectCard(this)" style="z-index:1;">6</div>
         </div>
 
+        <!-- OPOSIÇÃO -->
         <div id="oposicaoContainer" class="linear-container">
             <div class="linear-row" style="align-items: center; gap: calc(8 * var(--u));">
                 <div class="linear-col">
@@ -483,6 +478,7 @@
             </div>
         </div>
 
+        <!-- OPOSIÇÃO SCR -->
         <div id="oposicaoScrContainer" class="linear-container">
             <div class="linear-col" style="gap: calc(3 * var(--u));">
                 <div class="linear-row" style="align-items: center; gap: calc(2 * var(--u));">
@@ -518,6 +514,7 @@
             </div>
         </div>
 
+        <!-- DUPLA -->
         <div id="duplaContainer" class="linear-container">
             <div class="linear-row">
                 <div class="linear-col">
@@ -531,6 +528,7 @@
             </div>
         </div>
 
+        <!-- SCR -->
         <div id="scrContainer" class="linear-container">
             <div class="linear-row">
                 <div class="linear-col">
@@ -551,6 +549,7 @@
             </div>
         </div>
 
+        <!-- SCR TEMPO -->
         <div id="scrTempoContainer" class="linear-container">
             <div class="linear-row">
                 <div class="linear-col">
@@ -574,6 +573,7 @@
             </div>
         </div>
 
+        <!-- CSMD -->
         <div id="csmdContainer" class="linear-container">
             <div class="linear-row">
                 <div class="linear-col">
@@ -589,6 +589,7 @@
             </div>
         </div>
 
+        <!-- TEMPLO DE AFRODITE -->
         <div id="taContainer" class="linear-container">
             <div class="temple-grid">
                 <div class="temple-col">
@@ -649,6 +650,7 @@
             </div>
         </div>
 
+        <!-- ESTRELA DE DAVI -->
         <div id="daviContainer" class="linear-container">
             <div class="temple-grid">
                 <div class="temple-col">
@@ -709,6 +711,7 @@
             </div>
         </div>
 
+        <!-- FUTEBOL -->
         <div id="futebolContainer" class="linear-container">
             <div class="futebol-grid">
                 <div class="futebol-col">
@@ -776,13 +779,16 @@
             </div>
         </div>
 
-    </div><div id="gamePanel" class="game-panel">
+    </div><!-- /mainBoard -->
+
+    <div id="gamePanel" class="game-panel">
         <button id="btnGlobalRandom" class="action-btn" onclick="triggerGlobalRandom()">GERAR JOGO ALEATÓRIO</button>
         <div id="gameStatus" class="game-status">Selecione uma carta</div>
         <div id="gameGrid" class="game-grid"></div>
         <div class="scroll-hint-bar" aria-hidden="true"></div>
     </div>
 
+    <!-- MODAL: Escolha de carta -->
     <div id="tarotModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -803,6 +809,7 @@
         </div>
     </div>
 
+    <!-- MODAL: Enciclopédia -->
     <div id="encyclopediaModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -825,6 +832,7 @@
         </div>
     </div>
 
+    <!-- MODAL: Detalhe da carta -->
     <div id="detailModal" class="modal">
         <div class="modal-content" style="max-width:360px;height:auto;max-height:90vh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;">
             <div class="modal-header">
@@ -1348,12 +1356,12 @@
     "7 de Ouros": [
         "colheita por mérito",
         "insatisfação positiva",
-        "recebe coisas boas",
+        "paciência no florescimento",
         "equilíbrio e segurança",
         "prêmios e sorte",
         "construção duradoura",
         "almejando mais",
-        "Lucra Insatisfeito"
+        "materialização orgânica"
     ],
     "8 de Ouros": [
         "recomeço favorável",
@@ -1457,7 +1465,7 @@ const extendedMeanings = {
     "2 de Espadas": { situacao: "Momento de oposição cega onde não há avanço. A paralisação mental gerada pela recusa em enxergar a verdade, gerando um bloqueio ou empate entre dois lados." },
     "3 de Espadas": { situacao: "Momento de dor aguda por conta de um erro ou decepção. Indica a dura aceitação do desgaste em um acordo ou a falha iminente nas expectativas." },
     "4 de Espadas": { situacao: "Momento de dar um passo para trás mentalmente. Representa uma inatividade estratégica, o popular 'deixar no vácuo' ou se isolar para restaurar a ordem interna." },
-    "5 de Espadas": { situacao: "Momento dominado pela hostilidade cruel. Um cenário bélico e adoecido onde vencer pelo corte da palavra machuca as duas partes gravemente, causando desperício." },
+    "5 de Espadas": { situacao: "Momento dominado pela hostilidade cruel. Um cenário bélico e adoecido onde vencer pelo corte da palavra machuca as duas partes gravemente, causando desperdício." },
     "6 de Espadas": { situacao: "Momento de transição morosa e esgotamento. Representa o afastamento sutil de uma zona de perigo, navegando com desânimo para mares menos turbulentos." },
     "7 de Espadas": { situacao: "Momento para a discrição máxima. Representa uma atuação sorrateira e estratégica, onde o indivíduo contorna os problemas e articula seus meios sem ser flagrado." },
     "8 de Espadas": { situacao: "Momento de sentir-se preso por restrições ou cobranças severas. Apresenta um cenário que parece sem saída devido à autolimitação, culpa ou pressão sufocante." },
@@ -1473,17 +1481,17 @@ const extendedMeanings = {
     "2 de Ouros": { situacao: "Cenário de instabilidade material temporária, marcado por impasses, adiamentos kármicos e obstáculos concretos ou sociais que o consulente não causou e não possui meios de remover de imediato. A situação exige extrema flexibilidade, adaptação e 'jogo de cintura' para fazer malabarismos entre diversas demandas. Há uma clara mensagem de atraso: não é uma negação definitiva ao que se deseja, mas sim um 'hoje não dá'. Para suportar essas adversidades transponíveis, o indivíduo entra numa gangorra, adotando um escape de posicionamento (sem opiniões ou escolhas fixas) e mantendo um descomprometimento de humor para não se desgastar e se estressar à toa com aquilo que, temporariamente, independe da sua vontade." },
     "3 de Ouros": { situacao: "Cenário de expansão, estruturação prática e progresso impulsionado pela colaboração essencial. A situação sai do impasse graças à intervenção construtiva de terceiros (especialistas, tutores, pessoas mais velhas ou experientes) ou ao surgimento de uma ocasião externa oportuna que conecta os interesses. É uma fase que exige esforço coordenado, trabalho minucioso e de longo prazo (trabalho de formiguinha) seguindo estritamente planejamentos, protocolos e planilhas. Representa as provas superadas, a conquista por mérito e as promoções que não desviam a rota da carreira, mas a impulsionam. Acima de tudo, o sucesso material e a abundância dependem da perícia adquirida e da maturidade e humildade de reconhecer que é preciso ser tutelado e aceitar ajuda para aprender fazendo." },
     "4 de Ouros": { situacao: "Cenário de estagnação doentia, rigidez teimosa e absoluto controle. O indivíduo, movido pelo medo visceral de perder a colheita alcançada no passado, apega-se ferozmente a tudo o que possui (sejam bens materiais, posturas mentais ou relações), o que gera uma mesquinharia crônica. Essa avareza inibe qualquer chance de inovação, investimento ou risco, congelando o fluxo da vida. Nos relacionamentos, a dependência dessa falsa segurança e o pavor de abandono transmutam-se em dominação, ciúme hostil e abusos de poder. Por covardia e orgulho, o sujeito se isola e confina a si mesmo, acreditando que se protege do assédio externo. No entanto, sua imobilidade apenas garante o desbotamento, a miopia existencial e o apodrecimento silencioso de todo o seu potencial material e afetivo." },
-    "5 de Ouros": { situacao: "Cenário de crise abissal, empobrecimento geral e completa vulnerabilidade. Trata-se do desdobramento fatal da mesquinharia e estagnação da etapa anterior: pela falta de generosidade e ausência de fluidez orgânica, a estrutura apodrece e o indivíduo é arrastado para per perdas severas — sejam falências, demissões, crises agudas de relacionamento ou até problemas de saúde e vitalidade consideráveis. A pessoa se encontra isolada, sentindo-se marginalizada, rejeitada e sem qualquer tipo de rede de apoio. É um terreno de miséria tanto financeira quanto afetiva, contaminado pelo pessimismo e pela ansiedade intensa pela sobrevivência diária. Em profundo esgotamento, descuido e falta de iniciativa, o indivíduo perdeu temporariamente a autonomia e a própria confiança." },
+    "5 de Ouros": { situacao: "Cenário de crise abissal, empobrecimento geral e completa vulnerabilidade. Trata-se do desdobramento fatal da mesquinharia e estagnação da etapa anterior: pela falta de generosidade e ausência de fluidez orgânica, a estrutura apodrece e o indivíduo é arrastado para perdas severas — sejam falências, demissões, crises agudas de relacionamento ou até problemas de saúde e vitalidade consideráveis. A pessoa se encontra isolada, sentindo-se marginalizada, rejeitada e sem qualquer tipo de rede de apoio. É um terreno de miséria tanto financeira quanto afetiva, contaminado pelo pessimismo e pela ansiedade intensa pela sobrevivência diária. Em profundo esgotamento, descuido e falta de iniciativa, o indivíduo perdeu temporariamente a autonomia e a própria confiança." },
     "6 de Ouros": { situacao: "Cenário de resgate kármico, caridade e equilíbrio pautado fortemente na dinâmica de dar e receber. O estado de falência e crise começa a ser resolvido exclusivamente através da bondade, sorte e ajuda material de terceiros (ofertas de emprego, empréstimos sem contrapartida, apoio médico, conselhos). Contudo, a situação não destrava facilmente porque o próprio consulente sabota a fluidez: por orgulho crônico, hesita em decidir, considerando a oportunidade ofertada uma humilhante 'esmola'. Ele assume uma atitude imobilizada, esperando que o outro faça tudo por ele — inclusive afetivamente. Exige-se do indivíduo a imediata superação dessa arrogância através do exercício da humildade plena. É um arcano profundamente didático: é necessário reaprender a receber graciosamente o amparo inusitado e generoso hoje, para curar as feridas antigas e ser capaz de partilhar a própria ajuda no amanhã." },
     "7 de Ouros": { situacao: "Cenário de recompensas graduais, avaliação construtiva e necessidade irredutível de paciência. O indivíduo domina com estabilidade as estruturas à sua volta e, finalmente, começa a colher lucros tangíveis e progresso merecido de seus esforços — além de receber favores inesperados por sorte. No entanto, essa fase é pautada por uma 'insatisfação fominha': a pessoa analisa os bons resultados que obteve e, com maturidade analítica, constata que quer e pode obter muito mais, ambicionando de forma muito positiva alcançar o nível máximo de sucesso. Para que essa imensa realização aconteça, qualquer precipitação é fatal. O fluxo aqui aponta para um crescimento estrutural, denso e consideravelmente vagaroso; a colheita definitiva dependerá vitalmente da disciplina e da paciência para aguardar o momento exato do florescimento pleno, sem precipitar e minimizar os ganhos finais." },
     "8 de Ouros": { situacao: "Cenário de lapidação meticulosa, renovação e forte refinamento das aptidões kármicas. É o momento de um importante recomeço, porém não se parte do zero; reinicia-se o ciclo carregando uma profunda e valiosa bagagem de experiência anterior que garante favorecimentos concretos (como ser realocado em uma nova área em que a técnica antiga auxilia perfeitamente, ou reatar um relacionamento afetivo sob novas premissas e sem ilusões, pois já conhecem as deficiências mútuas). A situação clama pelo aprimoramento contínuo, estudo intenso, prudência e trabalho focado. O indivíduo age de forma autodidata, dedicado apaixonadamente à tarefa diária e investindo unicamente no autoaperfeiçoamento solitário. Esse prazer metódico nas descobertas de si mesmo é justamente a chave lapidadora que o conduzirá infalivelmente a um patamar ainda mais sofisticado de segurança, destreza e sucesso futuro." },
-    "9 de Ouros": { situacao: "Cenário coroado por estabilidade suntuosa, prosperidade cristalizada e a exultante colheita dos méritos individuais. O indivíduo alcança uma fase de profunda satisfação em todos os setores essenciais da materialidade: finanças em alta, conforto familiar, saúde curada, luxo visível e distinção social inegável. Representa a merecida compensação pelo esforço disciplinado das etapas anteriores, recuperando amplamente os prejuízos de antigamente e promovendo uma poderosa autoestima e autonomia pessoal. Tudo no entorno favorece as conquistas mais elevadas — excelentes ofertas, relacionamentos fartos e a consolidação prática de metas de longa duração. É, em sua essência, o grande momento para recolher os dividendos energéticos e materiais da vida e se permitir relaxar na plenitude da segurança total." },
+    "9 de Ouros": { situacao: "Cenário coroado por estabilidade suntuosa, prosperidade cristalizada e a exultante colheita dos méritos individuais. O indivíduo alcança uma fase de profunda satisfação em todos os setores essenciais da materialidade: finanças em alta, conforto familiar, saúde curada, luxo visível e distinção social inegável. Representa a merecida compensação pelo esforcço disciplinado das etapas anteriores, recuperando amplamente os prejuízos de antigamente e promovendo uma poderosa autoestima e autonomia pessoal. Tudo no entorno favorece as conquistas mais elevadas — excelentes ofertas, relacionamentos fartos e a consolidação prática de metas de longa duração. É, em sua essência, o grande momento para recolher os dividendos energéticos e materiais da vida e se permitir relaxar na plenitude da segurança total." },
     "10 de Ouros": { situacao: "Cenário de apogeu prático, segurança invulnerável e perpetuação do sucesso patrimonial e familiar. O sucesso material, que no estágio anterior era saboreado de modo individual, expande-se aqui para alcançar seu grau máximo: torna-se um legado perene. Esta força abarca a rede familiar formal, oficializada em cartórios e testamentos, acolhendo tradições, heranças concretas (sejam elas imóveis valorosos ou até condicionamentos hereditários da ancestralidade). A fase atesta com precisão o fim das aflições financeiras ou de instabilidade. Profunda competência, boa administração rotineira e responsabilidade cimentam os alicerces indestrutíveis desta grande rede de convivência prazerosa e extremamente estável. Até mesmo o amor, neste estágio, é norteado pelo reconhecimento valioso que o conjunto de conquistas e os bons vínculos consolidados garantem à tranquilidade do futuro." },
 
     // Ouros Restantes (Preservados)
     "Pajem de Ouros": { situacao: "Momento de pragmatismo para aprender como o mundo funciona. Representa o estudo dedicado de uma meta realista, especulando o valor prático dos passos iniciais." },
     "Cavaleiro de Ouros": { situacao: "Momento regido por paciência laboriosa. Um avanço seguro, de passos curtos e persistentes, focado no processo constante e na garantia de não retroceder." },
-    "Rainha de Ouros": { situacao: "Momento em que a ponderação material se torna a prioridade. Demonstra-se uma gestão firme e confortável para conservar o bem-estar e manter a ordem do lar/trabalho." },
+    "Rainha de Ouros": { situacao: "Momento em que a ponderação material se torna a prioridade. Demonstra-se uma gestão firme e confortável para conservar o bem-estar e manter la ordem do lar/trabalho." },
     "Rei de Ouros": { situacao: "Momento de sucesso administrativo em seu nível máximo. O ambiente requer a solidez e a estabilidade daquele que domina as finanças e assegura a prosperidade do ecossistema." }
 };
 
@@ -1565,18 +1573,10 @@ const extendedMeanings = {
 
     function injectInnerTag(slotElement, cardName) {
         if (!cardName) return;
-        
-        // Pega a tag existente para saber qual era a palavra anterior (se houver)
-        let currentWord = "";
         const existing = slotElement.querySelector('.card-inner-tag');
-        if (existing) {
-            currentWord = existing.textContent;
-            existing.remove();
-        }
-
+        if (existing) existing.remove();
         let cleanName = cardName.replace(/^\d+\s*[-–]\s*/, "").trim();
         let wordPool = ["Fluxo"];
-        
         if (externalMeanings && externalMeanings[cleanName] && externalMeanings[cleanName].verbos && externalMeanings[cleanName].verbos.length > 0) {
             wordPool = externalMeanings[cleanName].verbos;
         } else if (verbsMap[cleanName]) {
@@ -1588,23 +1588,11 @@ const extendedMeanings = {
                 }
             }
         }
-
         let luckyWord = wordPool[Math.floor(Math.random() * wordPool.length)];
-        
-        // NOVA LÓGICA: Força o sorteio a pegar uma palavra diferente
-        if (wordPool.length > 1) {
-            let attempts = 0;
-            while (luckyWord === currentWord && attempts < 15) {
-                luckyWord = wordPool[Math.floor(Math.random() * wordPool.length)];
-                attempts++;
-            }
-        }
-
         const tagDiv = document.createElement('div');
         tagDiv.className = 'card-inner-tag';
         tagDiv.textContent = luckyWord;
         slotElement.appendChild(tagDiv);
-        
         let cardWidth = slotElement.clientWidth;
         let fontSize = cardWidth * 0.14;
         if (luckyWord.length > 8) fontSize = cardWidth * 0.11;
