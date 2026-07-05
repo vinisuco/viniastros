@@ -572,7 +572,7 @@
                     <select id="deckSelect" class="meta-select" onchange="applyDeckSelection()">
                         <option value="Alchemical">Alchemical Tarot</option>
                         <option value="GoldArt">Golden Art Nouveau</option>
-                        <option value="Radiant">Radiant Waite</option>
+                        <option value="Radiant" selected>Radiant Waite</option>
                         <option value="Before">Before Tarot</option>
                         <option value="AfterTarot">After Tarot</option>
                         <option value="NewVision">New Vision Tarot</option>
@@ -582,7 +582,7 @@
                         <option value="OldStyle">Old Style Tarot</option>
                         <option value="Oppositions">Tarot of Oppositions</option>
                         <option value="RiderWaite">Rider Waite Clássico</option>
-                        <option value="MoonBaby" selected>Moon Baby Tarot (padrão)</option>
+                        <option value="MoonBaby">Moon Baby Tarot (padrão)</option>
                     </select>
                 </div>
                 <div class="meta-selector-row">
@@ -1235,7 +1235,7 @@
     const decksWithSpecialMajorNaming = ['Before', 'AfterTarot', 'Fyodor'];
     const specialMajorFileNames = ["Fool","Magician","Priestess","Empress","Emperor","Hierophant","Lovers","Chariot","Strength","Hermit","Wheel","Justice","Hanged","Death","Temperance","Devil","Tower","Star","Moon","Sun","Judgement","World"];
     const deckPentaclesPrefixOverrides = { Fyodor: 'Co' };
-    let currentDeckKey = 'MoonBaby';
+    let currentDeckKey = 'Radiant';
 
     const moonBabyMajors = ["https://i.ibb.co/LDpLtSpD/IMG-4190.png","https://i.ibb.co/mrXj7pGm/IMG-4191.png","https://i.ibb.co/b5d703rp/IMG-4192.png","https://i.ibb.co/n40BJ1x/IMG-4193.png","https://i.ibb.co/NnfSJ4Lq/IMG-4194.png","https://i.ibb.co/xqqGZM0s/IMG-4195.png","https://i.ibb.co/Q7hj1T7W/IMG-4196.png","https://i.ibb.co/mVNC1NSJ/IMG-4197.png","https://i.ibb.co/20c5Vwrd/IMG-4312.png","https://i.ibb.co/VpwJfDt1/IMG-4313.png","https://i.ibb.co/cSR7kRGC/IMG-4314.png","https://i.ibb.co/pj2w2Rwk/IMG-4315.png","https://i.ibb.co/5WQWTvSt/IMG-4202.png","https://i.ibb.co/cSkJ7YR3/IMG-4203.png","https://i.ibb.co/Xrpd6k2Y/IMG-4204.png","https://i.ibb.co/bgPr7G2H/IMG-4205.png","https://i.ibb.co/RR3LyDx/IMG-4206.png","https://i.ibb.co/z0M2cTr/IMG-4207.png","https://i.ibb.co/bRKPjCL9/IMG-4208.png","https://i.ibb.co/93Nwyj3p/IMG-4209.png","https://i.ibb.co/B27pJPQT/IMG-4318.png","https://i.ibb.co/8n5w4hLM/IMG-4319.png"];
     const moonBabyPentacles = ["https://i.ibb.co/wZ37xFKL/IMG-4244.png","https://i.ibb.co/vxVZmP4n/IMG-4245.png","https://i.ibb.co/wh3B8Hmv/IMG-4246.png","https://i.ibb.co/PvT12XVQ/IMG-4247.png","https://i.ibb.co/4nsc6Mfx/IMG-4248.png","https://i.ibb.co/DHVmk422/IMG-4249.png","https://i.ibb.co/GfkBkY3q/IMG-4250.png","https://i.ibb.co/chn25CJC/IMG-4251.png","https://i.ibb.co/RT1nz4LC/IMG-4258.png","https://i.ibb.co/DPkBQKyg/IMG-4259.png","https://i.ibb.co/nMq5LCG2/IMG-4260.png","https://i.ibb.co/GQDvk7rf/IMG-4261.png","https://i.ibb.co/CFqrkLQ/IMG-4262.png","https://i.ibb.co/ks5Q7dSC/IMG-4263.png"];
