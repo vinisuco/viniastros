@@ -311,16 +311,22 @@
         #duplaContainer .card { --card-w: calc(18.2 * var(--u)); --card-h: calc(31.6 * var(--u)); font-size: calc(2.6 * var(--u)); }
         .dupla-active .back-card, #duplaContainer .back-card { width: calc(18.2 * var(--u)) !important; height: calc(31.6 * var(--u)) !important; }
         #scrTempoContainer .card { --card-w: calc(14 * var(--u)); --card-h: calc(24.3 * var(--u)); font-size: calc(2.4 * var(--u)); }
-        #futebolContainer { 
-            --card-w: calc(2 * var(--u)); 
-            --card-h: calc(5 * var(--u)); 
+                /* Ajuste do tamanho e proporção das cartas do jogo Futebol */
+        #futebolContainer .card { 
+            --card-w: calc(4.5 * var(--u)); 
+            --card-h: calc(7.8 * var(--u)); 
+            font-size: calc(0.9 * var(--u)); 
+        }
+        #futebolContainer .slot-label { 
+            font-size: calc(1.2 * var(--u)); 
+            letter-spacing: 1px; 
+            margin-bottom: calc(0.5 * var(--u)); 
+        }
+        #futebolContainer .temple-row-pair {
+            gap: calc(0.5 * var(--u));
         }
 
-        #futebolContainer .card { font-size: calc(1.85 * var(--u)); }
-        #futebolContainer .linear-col { width: calc(2 * var(--card-w) + 1.5 * var(--u)); }
-        #futebolContainer .slot-label { font-size: 10px; letter-spacing: 1px; line-height: 1.25; margin-bottom: 8px; }
-        #futebolContainer .slot-label .slot-sublabel { font-size: 8px; margin-top: 3px; }
-
+        /* Mantém as regras do Oposição SCR intactas */
         .board.futebol-scr-active #oposicaoScrContainer .card-inner-tag,
         .board.oposicao-scr-active #oposicaoScrContainer .card-inner-tag {
             font-size: calc(0.63 * var(--u)) !important; 
@@ -330,12 +336,14 @@
             font-size: calc(0.45 * var(--u)) !important;
         }
 
+        /* Ajusta as fontes internas e etiquetas do Futebol Principal */
         .board.futebol-active #futebolContainer .card-inner-tag {
-            font-size: calc(0.63 * var(--u)) !important;
+            font-size: calc(0.8 * var(--u)) !important;
         }
         .board.futebol-active #futebolContainer .slot-label {
-            font-size: 5px !important;
+            font-size: calc(1.2 * var(--u)) !important;
         }
+
 
         .board.futebol-scr-active .game-grid .back-card,
         .board.oposicao-scr-active .game-grid .back-card {
