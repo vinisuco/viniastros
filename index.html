@@ -561,7 +561,7 @@ onclick="playAnotherGame()">Limpar Jogo</button>
                         <option value="Radiant" selected>Radiant Waite</option>
                         <option value="Before">Before Tarot</option>
                         <option value="AfterTarot">After Tarot</option>
-                        <option value="NewVision">New Vision Tarot</option>
+                        <option value="NewVision">New Vision</option>
                         <option value="Fyodor">Fyodor Pavlov</option>
                         <option value="GoldenThread">Golden Thread Tarot</option>
                         <option value="HoiPoloi">HoiPoloi</option>
@@ -764,7 +764,7 @@ onclick="playAnotherGame()">Limpar Jogo</button>
                     <div class="card linear-card minor-card-gap" data-scr-tempo-slot="bottom-1" onclick="selectCard(this)">1</div>
                 </div>
                 <div class="linear-col">
-                    <div class="scr-tempo-deck-badge">New Vision Tarot</div>
+                    <div class="scr-tempo-deck-badge">New Vision</div>
                     <span class="slot-label">Caminho</span>
                     <div class="card linear-card" data-scr-tempo-slot="top-2" onclick="selectCard(this)">2</div>
                     <div class="card linear-card minor-card-gap" data-scr-tempo-slot="bottom-2" onclick="selectCard(this)">2</div>
@@ -2013,9 +2013,9 @@ onclick="playAnotherGame()">Limpar Jogo</button>
             { action: 'shuffle', msg: 'EMBARALHANDO MENORES...' },
             { type: 'custom', msg: 'SITUAÇÃO — ESCOLHA O MENOR (Before Tarot)', pool: shuffle(beforeDeck.minors), targets: [document.querySelector('[data-scr-tempo-slot="bottom-1"]')] },
             { action: 'shuffle', msg: 'EMBARALHANDO CAMINHO...' },
-            { type: 'custom', msg: 'CAMINHO — ESCOLHA O MAIOR (New Vision Tarot)', pool: shuffle(newVisionDeck.majors), targets: [document.querySelector('[data-scr-tempo-slot="top-2"]')] },
+            { type: 'custom', msg: 'CAMINHO — ESCOLHA O MAIOR (New Vision)', pool: shuffle(newVisionDeck.majors), targets: [document.querySelector('[data-scr-tempo-slot="top-2"]')] },
             { action: 'shuffle', msg: 'EMBARALHANDO MENORES...' },
-            { type: 'custom', msg: 'CAMINHO — ESCOLHA O MENOR (New Vision Tarot)', pool: shuffle(newVisionDeck.minors), targets: [document.querySelector('[data-scr-tempo-slot="bottom-2"]')] },
+            { type: 'custom', msg: 'CAMINHO — ESCOLHA O MENOR (New Vision)', pool: shuffle(newVisionDeck.minors), targets: [document.querySelector('[data-scr-tempo-slot="bottom-2"]')] },
             { action: 'shuffle', msg: 'EMBARALHANDO RESULTADO...' },
             { type: 'custom', msg: 'RESULTADO — ESCOLHA O MAIOR (After Tarot)', pool: shuffle(afterDeck.majors), targets: [document.querySelector('[data-scr-tempo-slot="top-3"]')] },
             { action: 'shuffle', msg: 'EMBARALHANDO MENORES...' },
