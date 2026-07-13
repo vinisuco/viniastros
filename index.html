@@ -502,12 +502,16 @@ body .board .card-inner-tag {
 
 body.mystic-theme .bottom-links .action-btn { background: transparent; border: none; }
 
-/* Tamanho das cartas da Cruz Simples APENAS quando reveladas */
-#cruzContainer .card[data-card-name] {
+
+/* Tamanho das cartas da Cruz Simples (sempre o mesmo tamanho) */
+#cruzContainer .card {
     --card-w: calc(5 * var(--u)); 
     --card-h: calc(8.6 * var(--u));
+    font-size: calc(1 * var(--u)); /* Linha adicionada para diminuir o texto do slot */
 }
-.board.cruz-active #cruzContainer .slot-label { font-size: calc(1.2 * var(--u)) !important; margin-bottom: calc(0.8 * var(--u)); }
+
+
+.board.cruz-active #cruzContainer .slot-label { font-size: calc(2 * var(--u)) !important; margin-bottom: calc(0.8 * var(--u)); }
 
 
 
